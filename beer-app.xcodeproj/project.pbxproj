@@ -56,15 +56,39 @@
 		5F27BD9A24E60D98004C0D98 /* beer-app */ = {
 			isa = PBXGroup;
 			children = (
+				5F27BDBA24E61107004C0D98 /* Controller */,
+				5F27BDB924E61102004C0D98 /* View */,
+				5F27BDB824E610FD004C0D98 /* Model */,
 				5F27BD9B24E60D98004C0D98 /* AppDelegate.swift */,
 				5F27BD9D24E60D98004C0D98 /* SceneDelegate.swift */,
-				5F27BD9F24E60D98004C0D98 /* ViewController.swift */,
-				5F27BDA124E60D98004C0D98 /* Main.storyboard */,
-				5F27BDA424E60D99004C0D98 /* Assets.xcassets */,
-				5F27BDA624E60D99004C0D98 /* LaunchScreen.storyboard */,
 				5F27BDA924E60D99004C0D98 /* Info.plist */,
 			);
 			path = "beer-app";
+			sourceTree = "<group>";
+		};
+		5F27BDB824E610FD004C0D98 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5F27BDB924E61102004C0D98 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5F27BDA124E60D98004C0D98 /* Main.storyboard */,
+				5F27BDA424E60D99004C0D98 /* Assets.xcassets */,
+				5F27BDA624E60D99004C0D98 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5F27BDBA24E61107004C0D98 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5F27BD9F24E60D98004C0D98 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
