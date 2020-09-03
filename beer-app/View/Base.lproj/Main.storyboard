@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Your beers-->
         <scene sceneID="Vhf-af-KHl">
             <objects>
                 <tableViewController id="Nvc-Hl-6hs" sceneMemberID="viewController">
@@ -30,13 +30,19 @@
                             <outlet property="delegate" destination="Nvc-Hl-6hs" id="qU3-Tw-QPa"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="s6Y-oE-pCI"/>
+                    <navigationItem key="navigationItem" title="Your beers" id="s6Y-oE-pCI">
+                        <barButtonItem key="rightBarButtonItem" title="Add" image="plus" catalog="system" id="hgK-th-MOw">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="2c0-lJ-7nb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bs3-cj-2Qj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="321.73913043478262" y="136.60714285714286"/>
         </scene>
-        <!--View Controller-->
+        <!--New Beer-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="beer_app" customModuleProvider="target" sceneMemberID="viewController">
@@ -72,6 +78,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="New Beer" id="Sw4-3g-bw3">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Uk3-Nb-Dvd"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="z4I-O8-hYF"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -96,4 +106,7 @@
             <point key="canvasLocation" x="-588.40579710144937" y="136.60714285714286"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+    </resources>
 </document>
