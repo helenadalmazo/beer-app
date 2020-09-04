@@ -33,6 +33,8 @@ class BeerViewController: UIViewController {
         }
     }
     
+    // MARK: - Navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
@@ -47,6 +49,8 @@ class BeerViewController: UIViewController {
         
         beer = Beer(name, brewery, price, rating)
     }
+    
+    // MARK: - Actions
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         if let owningNavigationController = navigationController {
