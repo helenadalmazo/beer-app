@@ -86,5 +86,15 @@ class BeerListTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    @IBAction func unwindToBeerList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? BeerViewController, let beer = sourceViewController.beer {
+            
+            let newIndexPath = IndexPath(row: BeerRepository.shared.beers.count, section: 0)
+            
+            BeerRepository.shared.save(beer)
+            
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
 }

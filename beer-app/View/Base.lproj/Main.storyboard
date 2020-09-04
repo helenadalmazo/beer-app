@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jGo-dI-sxy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jGo-dI-sxy">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Cix-6d-MrV">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="beerReuseIdentifier" id="Cix-6d-MrV">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cix-6d-MrV" id="Wdb-rY-oLt">
@@ -33,7 +33,7 @@
                     <navigationItem key="navigationItem" title="Your beers" id="s6Y-oE-pCI">
                         <barButtonItem key="rightBarButtonItem" title="Add" image="plus" catalog="system" id="hgK-th-MOw">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="2c0-lJ-7nb"/>
+                                <segue destination="BYZ-38-t0r" kind="show" id="ZDo-on-Hzk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -79,13 +79,29 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Beer" id="Sw4-3g-bw3">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Uk3-Nb-Dvd"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="z4I-O8-hYF"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Uk3-Nb-Dvd">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="Sji-ZJ-Nav"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="z4I-O8-hYF">
+                            <connections>
+                                <segue destination="yHa-bz-B5H" kind="unwind" unwindAction="unwindToBeerListWithSender:" id="ilS-pw-Lqq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="breweryTextField" destination="K9f-T8-geO" id="8Ku-Aq-dQT"/>
+                        <outlet property="nameTextField" destination="TGZ-kZ-wWZ" id="AIA-Mt-Lnc"/>
+                        <outlet property="priceTextField" destination="cBO-n5-uFW" id="6Kb-aT-LLJ"/>
+                        <outlet property="ratingTextField" destination="yFJ-ow-ncx" id="New-gc-KaW"/>
+                        <outlet property="saveButton" destination="z4I-O8-hYF" id="vlM-w3-Ni7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="yHa-bz-B5H" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1042.0289855072465" y="136.60714285714286"/>
+            <point key="canvasLocation" x="1084" y="137"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HYx-hQ-azw">
