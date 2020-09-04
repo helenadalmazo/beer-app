@@ -77,24 +77,41 @@ class BeerListTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        
+        if let destination = segue.destination as? BeerViewController {
+            
+            if segue.identifier == "Edit" {
+                let indexPath = tableView.indexPathForSelectedRow
+                
+                let beer = BeerRepository.shared.beers[indexPath!.row]
+                
+                destination.beer = beer
+            }
+        }
     }
-    */
+    
+    //MARK: Actions
     
     @IBAction func unwindToBeerList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? BeerViewController, let beer = sourceViewController.beer {
             
-            let newIndexPath = IndexPath(row: BeerRepository.shared.beers.count, section: 0)
-            
-            BeerRepository.shared.save(beer)
-            
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                BeerRepository.shared.update(beer, at: selectedIndexPath.row)
+                
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            }
+            else {
+                BeerRepository.shared.save(beer)
+                
+                let newIndexPath = IndexPath(row: BeerRepository.shared.beers.count, section: 0)
+
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
         }
     }
 }

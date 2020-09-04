@@ -34,6 +34,16 @@ class BeerRepository {
     func save(_ beer: Beer) {
         beers.append(beer)
         
+        archive()
+    }
+    
+    func update(_ beer: Beer, at index: Int) {
+        beers[index] = beer
+        
+        archive()
+    }
+    
+    func archive() {
         do {
             let data = try NSKeyedArchiver.archivedData(withRootObject: beers, requiringSecureCoding: true)
             

@@ -22,6 +22,15 @@ class BeerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        if let beer = beer {
+            navigationItem.title = beer.name
+            
+            nameTextField.text = beer.name
+            breweryTextField.text = beer.brewery
+            priceTextField.text = String(beer.price)
+            ratingTextField.text = String(beer.rating)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

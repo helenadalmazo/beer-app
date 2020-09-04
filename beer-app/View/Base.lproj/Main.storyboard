@@ -23,6 +23,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="Edit" id="wVc-fr-4jo"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -33,7 +36,7 @@
                     <navigationItem key="navigationItem" title="Your beers" id="s6Y-oE-pCI">
                         <barButtonItem key="rightBarButtonItem" title="Add" image="plus" catalog="system" id="hgK-th-MOw">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="ZDo-on-Hzk"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="Add" id="ZDo-on-Hzk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -122,6 +125,9 @@
             <point key="canvasLocation" x="-588.40579710144937" y="136.60714285714286"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="wVc-fr-4jo"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>
     </resources>
