@@ -43,6 +43,12 @@ class BeerRepository {
         archive()
     }
     
+    func delete(at index: Int) {
+        beers.remove(at: index)
+        
+        archive()
+    }
+    
     func archive() {
         do {
             let data = try NSKeyedArchiver.archivedData(withRootObject: beers, requiringSecureCoding: true)
