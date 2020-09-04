@@ -17,7 +17,7 @@ class BeerRepository {
     
     init() {
         let directory = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true).first
-        print("Libary directory \(directory)")
+        print("[INFO] Libary directory \(directory)")
         
 //        UserDefaults.standard.removeObject(forKey: "beers")
         
