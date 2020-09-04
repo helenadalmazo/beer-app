@@ -13,7 +13,9 @@
 		5F27BDA324E60D98004C0D98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F27BDA124E60D98004C0D98 /* Main.storyboard */; };
 		5F27BDA524E60D99004C0D98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F27BDA424E60D99004C0D98 /* Assets.xcassets */; };
 		5F27BDA824E60D99004C0D98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F27BDA624E60D99004C0D98 /* LaunchScreen.storyboard */; };
+		5F5391092501C41F00415F4B /* BeerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5391082501C41F00415F4B /* BeerRepository.swift */; };
 		5FB0B90125006B8600960228 /* BeerListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB0B90025006B8600960228 /* BeerListTableViewController.swift */; };
+		5FB0B9052500700400960228 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB0B9042500700400960228 /* Beer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +27,9 @@
 		5F27BDA424E60D99004C0D98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F27BDA724E60D99004C0D98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F27BDA924E60D99004C0D98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F5391082501C41F00415F4B /* BeerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerRepository.swift; sourceTree = "<group>"; };
 		5FB0B90025006B8600960228 /* BeerListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListTableViewController.swift; sourceTree = "<group>"; };
+		5FB0B9042500700400960228 /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,8 @@
 		5F27BDB824E610FD004C0D98 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5F5391082501C41F00415F4B /* BeerRepository.swift */,
+				5FB0B9042500700400960228 /* Beer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -167,7 +173,9 @@
 			files = (
 				5F27BDA024E60D98004C0D98 /* BeerViewController.swift in Sources */,
 				5F27BD9C24E60D98004C0D98 /* AppDelegate.swift in Sources */,
+				5FB0B9052500700400960228 /* Beer.swift in Sources */,
 				5F27BD9E24E60D98004C0D98 /* SceneDelegate.swift in Sources */,
+				5F5391092501C41F00415F4B /* BeerRepository.swift in Sources */,
 				5FB0B90125006B8600960228 /* BeerListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
