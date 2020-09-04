@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Beer : NSObject, NSSecureCoding {
+class Beer: NSObject, NSSecureCoding {
     static var supportsSecureCoding: Bool = true
     
     var name: String
