@@ -21,7 +21,7 @@ class BeerRepository {
         
 //        UserDefaults.standard.removeObject(forKey: "beers")
         
-        load()
+        unarchive()
 
         if beers.isEmpty {
             let caiumBeer = Beer("Cauim", "Colorado", 15.9, 3)
@@ -49,7 +49,7 @@ class BeerRepository {
         archive()
     }
     
-    func archive() {
+    private func archive() {
         do {
             let data = try NSKeyedArchiver.archivedData(withRootObject: beers, requiringSecureCoding: true)
             
@@ -59,7 +59,7 @@ class BeerRepository {
         }
     }
     
-    func load() {
+    private func unarchive() {
         do {
             guard let data = UserDefaults.standard.value(forKey: "beers") as? Data else {
                 return
