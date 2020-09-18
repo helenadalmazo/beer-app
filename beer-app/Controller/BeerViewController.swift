@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BeerViewController: UIViewController {
+class BeerViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var breweryTextField: UITextField!
@@ -23,14 +23,23 @@ class BeerViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        nameTextField.delegate = self
+        
         if let beer = beer {
-            navigationItem.title = beer.name
-            
             nameTextField.text = beer.name
             breweryTextField.text = beer.brewery
             priceTextField.text = String(beer.price)
             ratingTextField.text = String(beer.rating)
+            
+            navigationItem.title = beer.name
         }
+        
+        updateSaveButtonState()
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        navigationItem.title = textField.text
+        updateSaveButtonState()
     }
     
     // MARK: - Navigation
@@ -56,6 +65,13 @@ class BeerViewController: UIViewController {
         if let owningNavigationController = navigationController {
             owningNavigationController.popViewController(animated: true)
         }
+    }
+    
+    //MARK: Private Methods
+    
+    private func updateSaveButtonState() {
+        let text = nameTextField.text ?? ""
+        saveButton.isEnabled = !text.isEmpty
     }
 }
 
