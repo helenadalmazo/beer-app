@@ -67,6 +67,36 @@ class BeerViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func changeImage(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Would you like to take a image from...", message: nil, preferredStyle: .actionSheet)
+        
+        let takeImageFromCamera = UIAlertAction(title: "Camera", style: .default, handler: { (_) in
+            print("User click Camera button")
+        })
+        
+        let chooseImageFromCamera = UIAlertAction(title: "Gallery", style: .default, handler: { (_) in
+            print("User click Gallery button")
+        })
+        
+        let remove = UIAlertAction(title: "Remove", style: .destructive, handler: { (_) in
+            print("User click Remove button")
+        })
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
+            print("User click Dismiss button")
+        })
+        
+        alert.addAction(takeImageFromCamera)
+        
+        alert.addAction(chooseImageFromCamera)
+        
+        alert.addAction(remove)
+        
+        alert.addAction(cancel)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     //MARK: Private Methods
     
     private func updateSaveButtonState() {
