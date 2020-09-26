@@ -109,6 +109,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="breweryTextField" destination="K9f-T8-geO" id="8Ku-Aq-dQT"/>
+                        <outlet property="imageView" destination="uER-kT-moW" id="v8k-6e-UEm"/>
                         <outlet property="nameTextField" destination="TGZ-kZ-wWZ" id="AIA-Mt-Lnc"/>
                         <outlet property="priceTextField" destination="cBO-n5-uFW" id="6Kb-aT-LLJ"/>
                         <outlet property="ratingTextField" destination="yFJ-ow-ncx" id="New-gc-KaW"/>
