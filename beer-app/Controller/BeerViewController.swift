@@ -100,11 +100,8 @@ class BeerViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
         
         alert.addAction(takeImageFromCamera)
-        
         alert.addAction(chooseImageFromCamera)
-        
         alert.addAction(remove)
-        
         alert.addAction(cancel)
         
         self.present(alert, animated: true, completion: nil)
