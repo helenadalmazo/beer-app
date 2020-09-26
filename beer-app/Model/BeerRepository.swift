@@ -6,6 +6,7 @@
 //  Copyright © 2020 Helena Dalmazo. All rights reserved.
 //
 
+import UIKit
 import Foundation
 
 class BeerRepository {
@@ -24,10 +25,8 @@ class BeerRepository {
         unarchive()
 
         if beers.isEmpty {
-            let caiumBeer = Beer("Cauim", "Colorado", 15.9, 3)
-            save(caiumBeer)
-            let cacildisBeer = Beer("Cacildis", "Brassaria Anápolis", 16.9, 2)
-            save(cacildisBeer)
+            let deserterBeer = Beer("Desertora", "Nefasta", 15.9, 5, UIImage(named: "deserter")!)
+            save(deserterBeer)
         }
     }
     

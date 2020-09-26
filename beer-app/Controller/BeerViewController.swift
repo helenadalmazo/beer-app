@@ -67,8 +67,9 @@ class BeerViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         let brewery = breweryTextField.text ?? ""
         let price = Double(priceTextField.text ?? "0") ?? 0
         let rating = Int(ratingTextField.text ?? "0") ?? 0
+        let image = imageView.image!
         
-        beer = Beer(name, brewery, price, rating)
+        beer = Beer(name, brewery, price, rating, image)
     }
     
     // MARK: - Actions
