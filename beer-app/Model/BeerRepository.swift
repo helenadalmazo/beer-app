@@ -27,6 +27,9 @@ class BeerRepository {
         if beers.isEmpty {
             let deserterBeer = Beer("Desertora", "Nefasta", 15.9, 5, UIImage(named: "deserter")!)
             save(deserterBeer)
+            
+            let refugeeBeer = Beer("Refugiada", "Nefasta", 13.9, 4, UIImage(named: "refugee")!)
+            save(refugeeBeer)
         }
     }
     
