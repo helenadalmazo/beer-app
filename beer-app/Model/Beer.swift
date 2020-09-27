@@ -16,9 +16,9 @@ class Beer: NSObject, NSSecureCoding {
     var brewery: String
     var price: Double
     var rating: Int
-    var image: UIImage
+    var image: Data
     
-    init(_ name: String, _ brewery: String, _ price: Double, _ rating: Int, _ image: UIImage) {
+    init(_ name: String, _ brewery: String, _ price: Double, _ rating: Int, _ image: Data) {
         self.name = name
         self.brewery = brewery
         self.price = price
@@ -40,10 +40,11 @@ class Beer: NSObject, NSSecureCoding {
             let brewery = decoder.decodeObject(of: [NSString.self], forKey: "brewery") as? String,
             let price = decoder.decodeDouble(forKey: "price") as? Double,
             let rating = decoder.decodeInteger(forKey: "rating") as? Int,
-            let image = decoder.decodeObject(forKey: "image") as? UIImage
+            let image = decoder.decodeObject(of: [NSString.self], forKey: "image") as? Data
             else {
                 return nil
         }
+        
         self.init(name, brewery, price, rating, image)
     }
 }

@@ -12,7 +12,6 @@ import Foundation
 class BeerRepository {
     
     static let shared = BeerRepository()
-    static let BEERS_KEY = "beers"
     
     var beers = [Beer]()
     
@@ -25,10 +24,10 @@ class BeerRepository {
         unarchive()
 
         if beers.isEmpty {
-            let deserterBeer = Beer("Desertora", "Nefasta", 15.9, 5, UIImage(named: "deserter")!)
+            let deserterBeer = Beer("Desertora", "Nefasta", 15.9, 5, UIImage(named: "deserter")!.pngData()!)
             save(deserterBeer)
-            
-            let refugeeBeer = Beer("Refugiada", "Nefasta", 13.9, 4, UIImage(named: "refugee")!)
+
+            let refugeeBeer = Beer("Refugiada", "Nefasta", 13.9, 4, UIImage(named: "refugee")!.pngData()!)
             save(refugeeBeer)
         }
     }

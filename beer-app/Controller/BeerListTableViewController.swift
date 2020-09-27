@@ -38,7 +38,7 @@ class BeerListTableViewController: UITableViewController {
         let beer = BeerRepository.shared.beers[indexPath.row]
         
         cell.nameLabel.text = beer.name
-        cell.imageImageView.image = beer.image
+        cell.imageImageView.image = UIImage(data: beer.image)
 
         return cell
     }
