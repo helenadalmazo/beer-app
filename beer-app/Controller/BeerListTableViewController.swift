@@ -33,11 +33,12 @@ class BeerListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "beerReuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "beerReuseIdentifier", for: indexPath) as! BeerTableViewCell
         
-        cell.textLabel?.text = BeerRepository.shared.beers[indexPath.row].name
-
-        // Configure the cell...
+        let beer = BeerRepository.shared.beers[indexPath.row]
+        
+        cell.nameLabel.text = beer.name
+        cell.imageImageView.image = UIImage(data: beer.image)
 
         return cell
     }

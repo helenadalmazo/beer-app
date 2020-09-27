@@ -6,12 +6,12 @@
 //  Copyright © 2020 Helena Dalmazo. All rights reserved.
 //
 
+import UIKit
 import Foundation
 
 class BeerRepository {
     
     static let shared = BeerRepository()
-    static let BEERS_KEY = "beers"
     
     var beers = [Beer]()
     
@@ -24,10 +24,11 @@ class BeerRepository {
         unarchive()
 
         if beers.isEmpty {
-            let caiumBeer = Beer("Cauim", "Colorado", 15.9, 3)
-            save(caiumBeer)
-            let cacildisBeer = Beer("Cacildis", "Brassaria Anápolis", 16.9, 2)
-            save(cacildisBeer)
+            let deserterBeer = Beer("Desertora", "Nefasta", 15.9, 5, UIImage(named: "deserter")!.pngData()!)
+            save(deserterBeer)
+
+            let refugeeBeer = Beer("Refugiada", "Nefasta", 13.9, 4, UIImage(named: "refugee")!.pngData()!)
+            save(refugeeBeer)
         }
     }
     
