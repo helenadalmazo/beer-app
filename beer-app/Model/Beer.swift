@@ -44,7 +44,6 @@ class Beer: NSObject, NSSecureCoding {
             else {
                 return nil
         }
-        
         self.init(name, brewery, price, rating, image)
     }
 }
