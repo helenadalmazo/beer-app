@@ -55,7 +55,7 @@ class BeerRatingView: UIStackView {
             let imageForIndex = UIImage(named: "Beer Rating Images/\(index + 1)")!
             button.setImage(imageForIndex, for: .selected)
         
-            button.translatesAutoresizingMaskIntoConstraints = false
+//            button.translatesAutoresizingMaskIntoConstraints = false
             button.heightAnchor.constraint(equalToConstant: 50).isActive = true
             button.widthAnchor.constraint(equalToConstant: 50).isActive = true
             
