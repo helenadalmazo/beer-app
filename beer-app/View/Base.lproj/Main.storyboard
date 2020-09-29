@@ -79,7 +79,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="q2z-E8-XzZ">
-                                <rect key="frame" x="20" y="88" width="374" height="536"/>
+                                <rect key="frame" x="20" y="88" width="374" height="492"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uER-kT-moW">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="208"/>
@@ -109,13 +109,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Rating" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yFJ-ow-ncx">
-                                        <rect key="frame" x="0.0" y="382" width="374" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalCentering" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ITo-wg-WRL" customClass="BeerRatingView" customModule="beer_app" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="426" width="374" height="110"/>
+                                        <rect key="frame" x="0.0" y="382" width="374" height="110"/>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -146,7 +141,6 @@
                         <outlet property="imageView" destination="uER-kT-moW" id="v8k-6e-UEm"/>
                         <outlet property="nameTextField" destination="TGZ-kZ-wWZ" id="AIA-Mt-Lnc"/>
                         <outlet property="priceTextField" destination="cBO-n5-uFW" id="6Kb-aT-LLJ"/>
-                        <outlet property="ratingTextField" destination="yFJ-ow-ncx" id="New-gc-KaW"/>
                         <outlet property="ratingView" destination="ITo-wg-WRL" id="dlv-3B-r0L"/>
                         <outlet property="saveButton" destination="z4I-O8-hYF" id="vlM-w3-Ni7"/>
                     </connections>
