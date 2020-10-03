@@ -10,11 +10,11 @@ import UIKit
 
 class BeerViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var breweryTextField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
-    @IBOutlet weak var ratingTextField: UITextField!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var ratingView: BeerRatingView!
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
@@ -30,11 +30,11 @@ class BeerViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         imagePicker.delegate = self
         
         if let beer = beer {
+            imageView.image = UIImage(data: beer.image)
             nameTextField.text = beer.name
             breweryTextField.text = beer.brewery
             priceTextField.text = String(beer.price)
-            ratingTextField.text = String(beer.rating)
-            imageView.image = UIImage(data: beer.image)
+            ratingView.rating = beer.rating
             
             navigationItem.title = beer.name
         }
@@ -63,11 +63,11 @@ class BeerViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
             return
         }
         
+        let image = imageView.image!.pngData()!
         let name = nameTextField.text ?? ""
         let brewery = breweryTextField.text ?? ""
         let price = Double(priceTextField.text ?? "0") ?? 0
-        let rating = Int(ratingTextField.text ?? "0") ?? 0
-        let image = imageView.image!.pngData()!
+        let rating = ratingView.rating
         
         beer = Beer(name, brewery, price, rating, image)
     }

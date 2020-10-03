@@ -79,41 +79,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="q2z-E8-XzZ">
-                                <rect key="frame" x="20" y="88" width="374" height="508"/>
+                                <rect key="frame" x="20" y="88" width="374" height="492"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uER-kT-moW">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="300"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="208"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="IQY-k5-QDU"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0C-zs-g3o">
-                                        <rect key="frame" x="0.0" y="310" width="374" height="22"/>
+                                        <rect key="frame" x="0.0" y="218" width="374" height="22"/>
                                         <state key="normal" image="camera" catalog="system"/>
                                         <connections>
                                             <action selector="changeImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HBN-ck-N4q"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Beer name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TGZ-kZ-wWZ">
-                                        <rect key="frame" x="0.0" y="342" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="250" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Brewery" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K9f-T8-geO">
-                                        <rect key="frame" x="0.0" y="386" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="294" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cBO-n5-uFW">
-                                        <rect key="frame" x="0.0" y="430" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="338" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Rating" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yFJ-ow-ncx">
-                                        <rect key="frame" x="0.0" y="474" width="374" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalCentering" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ITo-wg-WRL" customClass="BeerRatingView" customModule="beer_app" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="382" width="374" height="110"/>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -143,7 +141,7 @@
                         <outlet property="imageView" destination="uER-kT-moW" id="v8k-6e-UEm"/>
                         <outlet property="nameTextField" destination="TGZ-kZ-wWZ" id="AIA-Mt-Lnc"/>
                         <outlet property="priceTextField" destination="cBO-n5-uFW" id="6Kb-aT-LLJ"/>
-                        <outlet property="ratingTextField" destination="yFJ-ow-ncx" id="New-gc-KaW"/>
+                        <outlet property="ratingView" destination="ITo-wg-WRL" id="dlv-3B-r0L"/>
                         <outlet property="saveButton" destination="z4I-O8-hYF" id="vlM-w3-Ni7"/>
                     </connections>
                 </viewController>
