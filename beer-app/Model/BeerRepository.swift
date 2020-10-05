@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import CoreData
 
 class BeerRepository {
     
@@ -15,62 +16,74 @@ class BeerRepository {
     
     var beers = [Beer]()
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     init() {
-        let directory = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true).first
-        print("[INFO] Libary directory \(directory)")
+        let directory = NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true).first
+        print("[INFO] App directory \(directory)")
         
-//        UserDefaults.standard.removeObject(forKey: "beers")
-        
-        unarchive()
+        load()
 
         if beers.isEmpty {
-            let deserterBeer = Beer("Desertora", "Nefasta", 15.9, 5, UIImage(named: "deserter")!.pngData()!)
-            save(deserterBeer)
-
-            let refugeeBeer = Beer("Refugiada", "Nefasta", 13.9, 4, UIImage(named: "refugee")!.pngData()!)
-            save(refugeeBeer)
+            saveSamples()
         }
     }
     
     func save(_ beer: Beer) {
         beers.append(beer)
         
-        archive()
+        saveContext()
     }
     
     func update(_ beer: Beer, at index: Int) {
         beers[index] = beer
         
-        archive()
+        saveContext()
     }
     
     func delete(at index: Int) {
+        context.delete(beers[index])
+        
         beers.remove(at: index)
         
-        archive()
+        saveContext()
     }
     
-    private func archive() {
+    private func saveContext() {
         do {
-            let data = try NSKeyedArchiver.archivedData(withRootObject: beers, requiringSecureCoding: true)
-            
-            UserDefaults.standard.set(data, forKey: "beers")
+            if context.hasChanges {
+                try context.save()
+            }
         } catch {
             print("[ERROR] Saving a beer: \(error)")
         }
     }
     
-    private func unarchive() {
+    private func load() {
         do {
-            guard let data = UserDefaults.standard.value(forKey: "beers") as? Data else {
-                return
-            }
-            
-            if let beers = try NSKeyedUnarchiver.unarchivedObject(ofClasses: [NSArray.self, Beer.self], from: data) as? [Beer] {
-                self.beers = beers
-            }
+            let request = Beer.fetchRequest() as NSFetchRequest<Beer>
+
+            beers = try context.fetch(request)
         } catch {
             print("[ERROR] Loading beers: \(error)")
         }
+    }
+    
+    private func saveSamples() {
+        let deserterBeer = Beer(context: context)
+        deserterBeer.name = "Desertora"
+        deserterBeer.brewery = "Nefasta"
+        deserterBeer.price = 15.9
+        deserterBeer.rating = 5
+        deserterBeer.image = UIImage(named: "deserter")!.pngData()!
+        save(deserterBeer)
+
+        let refugeeBeer = Beer(context: context)
+        refugeeBeer.name = "Refugiada"
+        refugeeBeer.brewery = "Nefasta"
+        refugeeBeer.price = 13.9
+        refugeeBeer.rating = 4
+        refugeeBeer.image = UIImage(named: "refugee")!.pngData()!
+        save(refugeeBeer)
     }
 }
