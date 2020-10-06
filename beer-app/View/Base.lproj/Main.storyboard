@@ -109,22 +109,22 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalCentering" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ITo-wg-WRL" customClass="BeerRatingView" customModule="beer_app" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="382" width="374" height="110"/>
-                                    </stackView>
                                     <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1S9-G6-h3b" customClass="BeerColorSlider" customModule="beer_app" customModuleProvider="target">
-                                        <rect key="frame" x="-2" y="502" width="378" height="31"/>
+                                        <rect key="frame" x="-2" y="382" width="378" height="31"/>
                                         <connections>
                                             <action selector="changeColor:" destination="BYZ-38-t0r" eventType="valueChanged" id="ZSJ-SV-lju"/>
                                         </connections>
                                     </slider>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wmt-eq-Wcn">
-                                        <rect key="frame" x="0.0" y="542" width="374" height="80"/>
+                                        <rect key="frame" x="0.0" y="422" width="374" height="80"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="xpA-TZ-9GM"/>
                                         </constraints>
                                     </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalCentering" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ITo-wg-WRL" customClass="BeerRatingView" customModule="beer_app" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="512" width="374" height="110"/>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
