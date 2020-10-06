@@ -30,13 +30,15 @@ class BeerViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         imagePicker.delegate = self
         
         if let beer = beer {
-            imageView.image = UIImage(data: beer.image)
+            imageView.image = UIImage(data: beer.image!)
             nameTextField.text = beer.name
             breweryTextField.text = beer.brewery
             priceTextField.text = String(beer.price)
-            ratingView.rating = beer.rating
+            ratingView.rating = Int(beer.rating)
             
             navigationItem.title = beer.name
+        } else {
+            beer = Beer(context: BeerRepository.shared.context)
         }
         
         updateSaveButtonState()
@@ -63,13 +65,12 @@ class BeerViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
             return
         }
         
-        let image = imageView.image!.pngData()!
-        let name = nameTextField.text ?? ""
-        let brewery = breweryTextField.text ?? ""
-        let price = Double(priceTextField.text ?? "0") ?? 0
-        let rating = ratingView.rating
+        beer?.image = imageView.image!.pngData()!
+        beer?.name = nameTextField.text ?? ""
+        beer?.brewery = breweryTextField.text ?? ""
+        beer?.price = Double(priceTextField.text ?? "0") ?? 0
+        beer?.rating = Int16(ratingView.rating)
         
-        beer = Beer(name, brewery, price, rating, image)
     }
     
     // MARK: - Actions
