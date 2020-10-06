@@ -32,13 +32,20 @@ class BeerViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         imagePicker.delegate = self
         
         if let beer = beer {
-            imageView.image = UIImage(data: beer.image!)
+            if let image = beer.image {
+                imageView.image = UIImage(data: image)
+            }
+            
             nameTextField.text = beer.name
             breweryTextField.text = beer.brewery
-            priceTextField.text = String(beer.price)
+            priceTextField.text = beer.price?.stringValue
+            
+            if let color = beer.color as? UIColor {
+                colorSlider.color = color
+                updateColor()
+            }
+            
             ratingView.rating = Int(beer.rating)
-            colorSlider.color = beer.color as! UIColor
-            updateColor()
             
             navigationItem.title = beer.name
         } else {
@@ -69,10 +76,12 @@ class BeerViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
             return
         }
         
-        beer?.image = imageView.image!.pngData()!
-        beer?.name = nameTextField.text ?? ""
-        beer?.brewery = breweryTextField.text ?? ""
-        beer?.price = Double(priceTextField.text ?? "0") ?? 0
+        if let image = imageView.image {
+            beer?.image = image.pngData()
+        }
+        beer?.name = nameTextField.text
+        beer?.brewery = breweryTextField.text
+        beer?.price = NumberFormatter().number(from: priceTextField.text ?? "")
         beer?.rating = Int16(ratingView.rating)
         beer?.color = colorView.backgroundColor
         

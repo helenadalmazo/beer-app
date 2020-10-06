@@ -38,7 +38,9 @@ class BeerListTableViewController: UITableViewController {
         let beer = BeerRepository.shared.beers[indexPath.row]
         
         cell.nameLabel.text = beer.name
-        cell.imageImageView.image = UIImage(data: beer.image!)
+        if let image = beer.image {
+            cell.imageImageView.image = UIImage(data: image)
+        }
 
         return cell
     }
@@ -101,7 +103,7 @@ class BeerListTableViewController: UITableViewController {
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 BeerRepository.shared.update(beer, at: selectedIndexPath.row)
                 
-                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+                tableView.reloadRows(at: [selectedIndexPath], with: .automatic)
             }
             else {
                 let newIndexPath = IndexPath(row: BeerRepository.shared.beers.count, section: 0)
