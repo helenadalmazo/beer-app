@@ -31,8 +31,6 @@ class BeerViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         nameTextField.delegate = self
         imagePicker.delegate = self
         
-//        colorSlider.maximumValue = Float(BeerColor.shared.colors.count - 1)
-        
         if let beer = beer {
             imageView.image = UIImage(data: beer.image!)
             nameTextField.text = beer.name
