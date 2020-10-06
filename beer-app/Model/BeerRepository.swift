@@ -76,6 +76,7 @@ class BeerRepository {
         deserterBeer.price = 15.9
         deserterBeer.rating = 5
         deserterBeer.image = UIImage(named: "deserter")!.pngData()!
+        deserterBeer.color = BeerColor.shared.getUIColor(at: 1)
         save(deserterBeer)
 
         let refugeeBeer = Beer(context: context)
@@ -84,6 +85,7 @@ class BeerRepository {
         refugeeBeer.price = 13.9
         refugeeBeer.rating = 4
         refugeeBeer.image = UIImage(named: "refugee")!.pngData()!
+        refugeeBeer.color = BeerColor.shared.getUIColor(at: 2)
         save(refugeeBeer)
     }
 }

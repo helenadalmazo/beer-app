@@ -15,6 +15,8 @@ class BeerViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     @IBOutlet weak var breweryTextField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var ratingView: BeerRatingView!
+    @IBOutlet weak var colorSlider: UISlider!
+    @IBOutlet weak var colorView: UIView!
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
@@ -29,12 +31,16 @@ class BeerViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         nameTextField.delegate = self
         imagePicker.delegate = self
         
+        colorSlider.maximumValue = Float(BeerColor.shared.colors.count - 1)
+        
         if let beer = beer {
             imageView.image = UIImage(data: beer.image!)
             nameTextField.text = beer.name
             breweryTextField.text = beer.brewery
             priceTextField.text = String(beer.price)
             ratingView.rating = Int(beer.rating)
+            colorSlider.value = Float(BeerColor.shared.getIndex(of: beer.color as! UIColor))
+            updateColor(color: beer.color as! UIColor)
             
             navigationItem.title = beer.name
         } else {
@@ -70,6 +76,7 @@ class BeerViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         beer?.brewery = breweryTextField.text ?? ""
         beer?.price = Double(priceTextField.text ?? "0") ?? 0
         beer?.rating = Int16(ratingView.rating)
+        beer?.color = colorView.backgroundColor
         
     }
     
@@ -108,11 +115,25 @@ class BeerViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         self.present(alert, animated: true, completion: nil)
     }
     
+    
+    @IBAction func changeColor(_ sender: UISlider) {
+        let index = Int(sender.value)
+        
+        let color = BeerColor.shared.getUIColor(at: index)
+        
+        updateColor(color: color)
+    }
+    
     //MARK: Private Methods
     
     private func updateSaveButtonState() {
         let text = nameTextField.text ?? ""
         saveButton.isEnabled = !text.isEmpty
+    }
+    
+    private func updateColor(color: UIColor) {
+        colorSlider.tintColor = color
+        colorView.backgroundColor = color
     }
 }
 
