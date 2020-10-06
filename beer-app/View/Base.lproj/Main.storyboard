@@ -25,30 +25,54 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="100.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PkE-C0-udk">
-                                            <rect key="frame" x="108" y="40" width="297" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n4p-Gy-LrU">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n4p-Gy-LrU">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100.5"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="NrF-TJ-Jp5"/>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="teb-Qg-EMq"/>
+                                                <constraint firstAttribute="width" constant="100" id="1Bk-Ja-BYR"/>
+                                                <constraint firstAttribute="height" constant="100" id="wKw-CO-Meu"/>
+                                            </constraints>
+                                        </imageView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="NDv-8B-n60">
+                                            <rect key="frame" x="110" y="29" width="194" height="43"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PkE-C0-udk">
+                                                    <rect key="frame" x="0.0" y="0.0" width="43.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31H-gX-85d">
+                                                    <rect key="frame" x="0.0" y="22.5" width="41.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wSL-Gc-dhc">
+                                            <rect key="frame" x="354" y="30.5" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="D85-jc-u7B"/>
+                                                <constraint firstAttribute="width" constant="40" id="JV9-B2-RlV"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="n4p-Gy-LrU" secondAttribute="bottom" id="KNB-4I-g9d"/>
-                                        <constraint firstItem="n4p-Gy-LrU" firstAttribute="top" secondItem="Wdb-rY-oLt" secondAttribute="top" id="Vwl-ot-jQo"/>
-                                        <constraint firstItem="n4p-Gy-LrU" firstAttribute="leading" secondItem="Wdb-rY-oLt" secondAttribute="leading" id="rvB-gJ-5FE"/>
+                                        <constraint firstItem="n4p-Gy-LrU" firstAttribute="top" secondItem="Wdb-rY-oLt" secondAttribute="top" id="2GY-ay-8P8"/>
+                                        <constraint firstAttribute="bottom" secondItem="n4p-Gy-LrU" secondAttribute="bottom" id="8cR-gj-gIG"/>
+                                        <constraint firstItem="NDv-8B-n60" firstAttribute="leading" secondItem="n4p-Gy-LrU" secondAttribute="trailing" constant="10" id="A3W-yI-ZDe"/>
+                                        <constraint firstItem="n4p-Gy-LrU" firstAttribute="leading" secondItem="Wdb-rY-oLt" secondAttribute="leading" id="Nvg-af-mDs"/>
+                                        <constraint firstItem="wSL-Gc-dhc" firstAttribute="trailing" secondItem="Wdb-rY-oLt" secondAttribute="trailingMargin" id="WQq-tm-qrn"/>
+                                        <constraint firstItem="NDv-8B-n60" firstAttribute="centerY" secondItem="Wdb-rY-oLt" secondAttribute="centerY" id="XH3-TW-OXZ"/>
+                                        <constraint firstItem="wSL-Gc-dhc" firstAttribute="centerY" secondItem="Wdb-rY-oLt" secondAttribute="centerY" id="ZSo-UD-vra"/>
+                                        <constraint firstItem="NDv-8B-n60" firstAttribute="centerX" secondItem="Wdb-rY-oLt" secondAttribute="centerX" id="txY-Ro-VFY"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="breweryLabel" destination="31H-gX-85d" id="zf8-lL-0vG"/>
                                     <outlet property="imageImageView" destination="n4p-Gy-LrU" id="81s-dT-zsa"/>
                                     <outlet property="nameLabel" destination="PkE-C0-udk" id="znS-cC-06v"/>
+                                    <outlet property="ratingImageView" destination="wSL-Gc-dhc" id="X0X-Ym-r5Q"/>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="Edit" id="wVc-fr-4jo"/>
                                 </connections>
                             </tableViewCell>
@@ -121,6 +145,11 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="xpA-TZ-9GM"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalCentering" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ITo-wg-WRL" customClass="BeerRatingView" customModule="beer_app" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="512" width="374" height="110"/>

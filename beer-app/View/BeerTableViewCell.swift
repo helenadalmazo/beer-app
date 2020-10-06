@@ -11,7 +11,9 @@ import UIKit
 class BeerTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var breweryLabel: UILabel!
     @IBOutlet weak var imageImageView: UIImageView!
+    @IBOutlet weak var ratingImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

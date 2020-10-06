@@ -38,9 +38,11 @@ class BeerListTableViewController: UITableViewController {
         let beer = BeerRepository.shared.beers[indexPath.row]
         
         cell.nameLabel.text = beer.name
+        cell.breweryLabel.text = beer.brewery
         if let image = beer.image {
             cell.imageImageView.image = UIImage(data: image)
         }
+        cell.ratingImageView.image = UIImage(named: "Beer Rating Images/\(beer.rating)")!
 
         return cell
     }
