@@ -1,20 +1,72 @@
 //
-//  BeerColor.swift
+//  BeerColorSlider.swift
 //  beer-app
 //
-//  Created by Helena Dalmazo on 05/10/20.
+//  Created by Helena Dalmazo on 06/10/20.
 //  Copyright © 2020 Helena Dalmazo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-class BeerColor {
+class BeerColorSlider: UISlider {
     
-    static let shared = BeerColor()
+    var color: UIColor = UIColor.white {
+        didSet {
+            colorDidChange()
+        }
+    }
     
-    let colors = [
-//        [ "red": 255, "green": 255, "blue": 255 ],
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setup()
+    }
+    
+    private func colorDidChange() {
+        value = Float(getIndex(of: color))
+    }
+    
+    @objc func valueDidChange(slider: UISlider) {
+        color = getUIColor(at: Int(value))
+    }
+    
+    private func setup() {
+        maximumValue = Float(colors.count - 1)
+        addTarget(self, action: #selector(BeerColorSlider.valueDidChange(slider:)), for: .valueChanged)
+        colorDidChange()
+    }
+    
+    private func getUIColor(at index: Int) -> UIColor {
+        let selected = colors[index]
+        
+        let red = CGFloat(selected["red"] ?? 0)/255
+        let green = CGFloat(selected["green"] ?? 0)/255
+        let blue = CGFloat(selected["blue"] ?? 0)/255
+        
+        return UIColor(red: red, green: green, blue: blue, alpha: 1)
+    }
+    
+    func getIndex(of color: UIColor) -> Int {
+        var fRed: CGFloat = 0
+        var fGreen: CGFloat = 0
+        var fBlue: CGFloat = 0
+        var fAlpha: CGFloat = 0
+        
+        color.getRed(&fRed, green: &fGreen, blue: &fBlue, alpha: &fAlpha)
+        
+        let red = Int(fRed * 255.0)
+        let green = Int(fGreen * 255.0)
+        let blue = Int(fBlue * 255.0)
+        
+        return colors.firstIndex(of: [ "red": red, "green": green, "blue": blue ])!
+    }
+    
+    private let colors = [
+        [ "red": 255, "green": 255, "blue": 255 ],
         [ "red": 251, "green": 240, "blue": 203 ],
         [ "red": 247, "green": 225, "blue": 161 ],
         [ "red": 244, "green": 211, "blue": 128 ],
@@ -70,35 +122,15 @@ class BeerColor {
         [ "red": 36, "green": 1, "blue": 0 ],
         [ "red": 22, "green": 0, "blue": 0 ],
         [ "red": 13, "green": 0, "blue": 0 ],
-//        [ "red": 0, "green": 0, "blue": 0 ],
+        [ "red": 0, "green": 0, "blue": 0 ],
     ]
     
-    init() {
-        
+    /*
+    // Only override draw() if you perform custom drawing.
+    // An empty implementation adversely affects performance during animation.
+    override func draw(_ rect: CGRect) {
+        // Drawing code
     }
-    
-    func getUIColor(at index: Int) -> UIColor {
-        let selected = colors[index]
-        
-        let red = CGFloat(selected["red"] ?? 0)/255
-        let green = CGFloat(selected["green"] ?? 0)/255
-        let blue = CGFloat(selected["blue"] ?? 0)/255
-        
-        return UIColor(red: red, green: green, blue: blue, alpha: 1)
-    }
-    
-    func getIndex(of color: UIColor) -> Int {
-        var fRed: CGFloat = 0
-        var fGreen: CGFloat = 0
-        var fBlue: CGFloat = 0
-        var fAlpha: CGFloat = 0
-        
-        color.getRed(&fRed, green: &fGreen, blue: &fBlue, alpha: &fAlpha)
-        
-        let red = Int(fRed * 255.0)
-        let green = Int(fGreen * 255.0)
-        let blue = Int(fBlue * 255.0)
-        
-        return colors.firstIndex(of: [ "red": red, "green": green, "blue": blue ])!
-    }
+    */
+
 }
