@@ -15,6 +15,8 @@ class BeerViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     @IBOutlet weak var breweryTextField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var ratingView: BeerRatingView!
+    @IBOutlet weak var colorSlider: BeerColorSlider!
+    @IBOutlet weak var colorView: UIView!
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
@@ -35,6 +37,8 @@ class BeerViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
             breweryTextField.text = beer.brewery
             priceTextField.text = String(beer.price)
             ratingView.rating = Int(beer.rating)
+            colorSlider.color = beer.color as! UIColor
+            updateColor()
             
             navigationItem.title = beer.name
         } else {
@@ -70,6 +74,7 @@ class BeerViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         beer?.brewery = breweryTextField.text ?? ""
         beer?.price = Double(priceTextField.text ?? "0") ?? 0
         beer?.rating = Int16(ratingView.rating)
+        beer?.color = colorView.backgroundColor
         
     }
     
@@ -108,11 +113,21 @@ class BeerViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         self.present(alert, animated: true, completion: nil)
     }
     
+    
+    @IBAction func changeColor(_ sender: UISlider) {
+        updateColor()
+    }
+    
     //MARK: Private Methods
     
     private func updateSaveButtonState() {
         let text = nameTextField.text ?? ""
         saveButton.isEnabled = !text.isEmpty
+    }
+    
+    private func updateColor() {
+        colorSlider.tintColor = colorSlider.color
+        colorView.backgroundColor = colorSlider.color
     }
 }
 
