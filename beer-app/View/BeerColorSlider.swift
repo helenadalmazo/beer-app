@@ -62,7 +62,7 @@ class BeerColorSlider: UISlider {
         let green = Int(fGreen * 255.0)
         let blue = Int(fBlue * 255.0)
         
-        return colors.firstIndex(of: [ "red": red, "green": green, "blue": blue ])!
+        return colors.firstIndex(of: [ "red": red, "green": green, "blue": blue ]) ?? 0
     }
     
     private let colors = [
