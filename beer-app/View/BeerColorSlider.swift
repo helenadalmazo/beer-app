@@ -43,9 +43,9 @@ class BeerColorSlider: UISlider {
     private func getUIColor(at index: Int) -> UIColor {
         let selected = colors[index]
         
-        let red = CGFloat(selected["red"] ?? 0)/255
-        let green = CGFloat(selected["green"] ?? 0)/255
-        let blue = CGFloat(selected["blue"] ?? 0)/255
+        let red = CGFloat(selected["red"] ?? 0) / 255
+        let green = CGFloat(selected["green"] ?? 0) / 255
+        let blue = CGFloat(selected["blue"] ?? 0) / 255
         
         return UIColor(red: red, green: green, blue: blue, alpha: 1)
     }
