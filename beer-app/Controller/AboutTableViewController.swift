@@ -37,7 +37,7 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard var text = tableView.cellForRow(at: indexPath)?.detailTextLabel?.text else {
+        guard let text = tableView.cellForRow(at: indexPath)?.detailTextLabel?.text else {
             return
         }
         
