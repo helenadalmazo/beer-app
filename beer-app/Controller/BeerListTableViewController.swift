@@ -8,7 +8,9 @@
 
 import UIKit
 
-class BeerListTableViewController: UITableViewController {
+class BeerListTableViewController: UITableViewController, UISearchResultsUpdating {
+    
+    let searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,14 @@ class BeerListTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        searchController.searchResultsUpdater = self
+        
+        searchController.obscuresBackgroundDuringPresentation = false
+        
+        tableView.tableHeaderView = searchController.searchBar
+        
+        definesPresentationContext = true
     }
 
     // MARK: - Table view data source
@@ -41,6 +51,8 @@ class BeerListTableViewController: UITableViewController {
         cell.breweryLabel.text = beer.brewery
         if let image = beer.image {
             cell.imageImageView.image = UIImage(data: image)
+        } else {
+            cell.imageImageView.image = nil
         }
         cell.ratingImageView.image = UIImage(named: "Beer Rating Images/\(beer.rating)")!
 
@@ -62,6 +74,11 @@ class BeerListTableViewController: UITableViewController {
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        BeerRepository.shared.load(filter: searchController.searchBar.text)
+        tableView.reloadData()
     }
 
     /*

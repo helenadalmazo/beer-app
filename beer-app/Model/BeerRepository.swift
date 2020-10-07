@@ -29,6 +29,20 @@ class BeerRepository {
         }
     }
     
+    func load(filter: String? = nil) {
+        do {
+            let request = Beer.fetchRequest() as NSFetchRequest<Beer>
+            
+            if let filter = filter, !filter.isEmpty {
+                request.predicate = NSPredicate(format: "(name CONTAINS[cd] %@) OR (brewery CONTAINS[cd] %@)", filter, filter)
+            }
+
+            beers = try context.fetch(request)
+        } catch {
+            print("[ERROR] Loading beers: \(error)")
+        }
+    }
+    
     func save(_ beer: Beer) {
         beers.append(beer)
         
@@ -56,16 +70,6 @@ class BeerRepository {
             }
         } catch {
             print("[ERROR] Saving a beer: \(error)")
-        }
-    }
-    
-    private func load() {
-        do {
-            let request = Beer.fetchRequest() as NSFetchRequest<Beer>
-
-            beers = try context.fetch(request)
-        } catch {
-            print("[ERROR] Loading beers: \(error)")
         }
     }
     
