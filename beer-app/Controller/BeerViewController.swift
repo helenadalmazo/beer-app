@@ -78,6 +78,8 @@ class BeerViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         
         if let image = imageView.image {
             beer?.image = image.pngData()
+        } else {
+            beer?.image = nil
         }
         beer?.name = nameTextField.text
         beer?.brewery = breweryTextField.text
@@ -110,7 +112,9 @@ class BeerViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
             self.present(self.imagePicker, animated: true, completion: nil)
         })
         
-        let remove = UIAlertAction(title: "Remove", style: .destructive)
+        let remove = UIAlertAction(title: "Remove", style: .destructive, handler: { (_) in
+            self.imageView.image = nil
+        })
         
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
         
