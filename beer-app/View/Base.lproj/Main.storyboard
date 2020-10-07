@@ -382,7 +382,6 @@
                     <navigationItem key="navigationItem" title="About" id="dX0-g4-dP2"/>
                     <connections>
                         <outlet property="authorImage" destination="3dl-ew-xQf" id="PRO-cK-DB6"/>
-                        <outlet property="githubLabel" destination="6Aw-9G-fPu" id="JId-o6-sdy"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vt4-lB-hHu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
