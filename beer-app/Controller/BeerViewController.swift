@@ -98,25 +98,30 @@ class BeerViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     }
     
     @IBAction func changeImage(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Would you like to take a image from...", message: nil, preferredStyle: .actionSheet)
+        let title = NSLocalizedString("BeerViewController ActionSheet Title", comment: "ActionSheet title")
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
         
-        let takeImageFromCamera = UIAlertAction(title: "Camera", style: .default, handler: { (_) in
+        let cameraLocalizedString = NSLocalizedString("Camera", comment: "")
+        let takeImageFromCamera = UIAlertAction(title: cameraLocalizedString, style: .default, handler: { (_) in
             self.imagePicker.sourceType = .camera
             self.imagePicker.allowsEditing = true
             self.present(self.imagePicker, animated: true, completion: nil)
         })
         
-        let chooseImageFromCamera = UIAlertAction(title: "Gallery", style: .default, handler: { (_) in
+        let galleryLocalizedString = NSLocalizedString("Gallery", comment: "")
+        let chooseImageFromCamera = UIAlertAction(title: galleryLocalizedString, style: .default, handler: { (_) in
             self.imagePicker.sourceType = .photoLibrary
             self.imagePicker.allowsEditing = false
             self.present(self.imagePicker, animated: true, completion: nil)
         })
         
-        let remove = UIAlertAction(title: "Remove", style: .destructive, handler: { (_) in
+        let removeLocalizedString = NSLocalizedString("Remove", comment: "")
+        let remove = UIAlertAction(title: removeLocalizedString, style: .destructive, handler: { (_) in
             self.imageView.image = nil
         })
         
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        let cancelLocalizedString = NSLocalizedString("Cancel", comment: "")
+        let cancel = UIAlertAction(title: cancelLocalizedString, style: .cancel)
         
         alert.addAction(takeImageFromCamera)
         alert.addAction(chooseImageFromCamera)
