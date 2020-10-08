@@ -1,0 +1,69 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "31H-gX-85d"; */
+//"31H-gX-85d.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "About"; ObjectID = "38R-au-iNC"; */
+"38R-au-iNC.title" = "Sobre";
+
+/* Class = "UILabel"; text = "https://github.com/helenadalmazo"; ObjectID = "6Aw-9G-fPu"; */
+"6Aw-9G-fPu.text" = "https://github.com/helenadalmazo";
+
+/* Class = "UILabel"; text = "LinkedIn"; ObjectID = "AEj-S3-kAw"; */
+"AEj-S3-kAw.text" = "LinkedIn";
+
+/* Class = "UITableViewSection"; headerTitle = "Author"; ObjectID = "Dy2-EC-k8V"; */
+"Dy2-EC-k8V.headerTitle" = "Autor";
+
+/* Class = "UILabel"; text = "Version"; ObjectID = "K7d-NW-PyY"; */
+"K7d-NW-PyY.text" = "Versão";
+
+/* Class = "UITextField"; placeholder = "Brewery"; ObjectID = "K9f-T8-geO"; */
+"K9f-T8-geO.placeholder" = "Cervejaria";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "PkE-C0-udk"; */
+//"PkE-C0-udk.text" = "Label";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "SUv-wt-7rT"; */
+"SUv-wt-7rT.text" = "Email";
+
+/* Class = "UINavigationItem"; title = "New Beer"; ObjectID = "Sw4-3g-bw3"; */
+"Sw4-3g-bw3.title" = "Nova cerveja";
+
+/* Class = "UITextField"; placeholder = "Beer name"; ObjectID = "TGZ-kZ-wWZ"; */
+"TGZ-kZ-wWZ.placeholder" = "Nome da cerveja";
+
+/* Class = "UIBarButtonItem"; title = "Cancel"; ObjectID = "Uk3-Nb-Dvd"; */
+"Uk3-Nb-Dvd.title" = "Cancelar";
+
+/* Class = "UITextField"; placeholder = "Price"; ObjectID = "cBO-n5-uFW"; */
+"cBO-n5-uFW.placeholder" = "Preço";
+
+/* Class = "UILabel"; text = "helenadalmazo@gmail.com"; ObjectID = "d3f-jv-zRh"; */
+"d3f-jv-zRh.text" = "helenadalmazo@gmail.com";
+
+/* Class = "UINavigationItem"; title = "About"; ObjectID = "dX0-g4-dP2"; */
+"dX0-g4-dP2.title" = "Sobre";
+
+/* Class = "UIBarButtonItem"; title = "Add"; ObjectID = "hgK-th-MOw"; */
+"hgK-th-MOw.title" = "Adicionar";
+
+/* Class = "UITableViewSection"; headerTitle = "beer-app"; ObjectID = "jxL-yC-3Ov"; */
+"jxL-yC-3Ov.headerTitle" = "beer-app";
+
+/* Class = "UILabel"; text = "GitHub"; ObjectID = "o4H-l3-Ujc"; */
+"o4H-l3-Ujc.text" = "GitHub";
+
+/* Class = "UILabel"; text = "https://br.linkedin.com/in/helena-dalmazo"; ObjectID = "pB7-2y-cpT"; */
+"pB7-2y-cpT.text" = "https://br.linkedin.com/in/helena-dalmazo";
+
+/* Class = "UILabel"; text = "Helena Dalmazo"; ObjectID = "rrM-M3-HIl"; */
+"rrM-M3-HIl.text" = "Helena Dalmazo";
+
+/* Class = "UINavigationItem"; title = "Your beers"; ObjectID = "s6Y-oE-pCI"; */
+"s6Y-oE-pCI.title" = "Suas cervejas";
+
+/* Class = "UILabel"; text = "1.0"; ObjectID = "uZF-Mx-Nra"; */
+"uZF-Mx-Nra.text" = "1.0";
+
+/* Class = "UIBarButtonItem"; title = "Save"; ObjectID = "z4I-O8-hYF"; */
+"z4I-O8-hYF.title" = "Salvar";

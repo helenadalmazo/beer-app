@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  beer-app
+
+  Created by Helena Dalmazo on 07/10/20.
+  Copyright © 2020 Helena Dalmazo. All rights reserved.
+*/
+
+"App description" = "Tome nota de todas as cervejas que beber! Tire uma foto da sua cerveja para registrar o momento, descreva seu nome, sua cervejaria, seu preço, deslize até encontrar sua coloração e faça sua avaliação! Você não terá mais dúvidas quando o garçom perguntar o qual quer beber com o beer-app em mãos!";
+
+"BeerViewController ActionSheet Title" = "Você gostaria de tirar uma imagem da...";
+
+"Camera" = "Câmera";
+"Gallery" = "Galeria";
+"Remove" = "Remover";
+"Cancel" = "Cancelar";

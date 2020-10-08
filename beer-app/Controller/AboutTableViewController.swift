@@ -10,13 +10,16 @@ import MessageUI
 import UIKit
 
 class AboutTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
-
+    
+    @IBOutlet weak var appDescriptionLabel: UILabel!
     @IBOutlet weak var authorImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.authorImage.layer.cornerRadius = self.authorImage.frame.size.width / 2
+        appDescriptionLabel.text = NSLocalizedString("App description", comment: "App description")
+        
+        authorImage.layer.cornerRadius = authorImage.frame.size.width / 2
         
         getAuthorImage()
     }

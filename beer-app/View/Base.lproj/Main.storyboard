@@ -88,7 +88,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Your beers" id="s6Y-oE-pCI">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left.slash.chevron.right" catalog="system" id="38R-au-iNC">
+                        <barButtonItem key="leftBarButtonItem" title="About" image="chevron.left.slash.chevron.right" catalog="system" id="38R-au-iNC">
                             <connections>
                                 <segue destination="fl5-rC-YF6" kind="show" id="43C-QB-Gow"/>
                             </connections>
@@ -226,12 +226,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3dC-bO-1N6">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3dC-bO-1N6">
                                                     <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <attributedString key="attributedText">
-                                                        <fragment>
-                                                            <string key="content">Take note of all the beers you drink! Take a photo of your beer to register the moment, describe the name, the brewery, the price, slide until you find the color and make your evaluation! You will no longer have any doubts when the waiter asks which you want to drink with the beer-app in hand!</string>
+                                                        <fragment content="App description">
                                                             <attributes>
                                                                 <font key="NSFont" metaFont="system" size="17"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="10" tighteningFactorForTruncation="0.0"/>
@@ -381,6 +380,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="About" id="dX0-g4-dP2"/>
                     <connections>
+                        <outlet property="appDescriptionLabel" destination="3dC-bO-1N6" id="Ur7-nk-mOO"/>
                         <outlet property="authorImage" destination="3dl-ew-xQf" id="PRO-cK-DB6"/>
                     </connections>
                 </tableViewController>
