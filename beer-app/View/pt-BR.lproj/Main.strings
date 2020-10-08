@@ -62,8 +62,8 @@
 /* Class = "UINavigationItem"; title = "Your beers"; ObjectID = "s6Y-oE-pCI"; */
 "s6Y-oE-pCI.title" = "Suas cervejas";
 
-/* Class = "UILabel"; text = "1.0"; ObjectID = "uZF-Mx-Nra"; */
-"uZF-Mx-Nra.text" = "1.0";
+/* Class = "UILabel"; text = "0.0"; ObjectID = "uZF-Mx-Nra"; */
+"uZF-Mx-Nra.text" = "0.0";
 
 /* Class = "UIBarButtonItem"; title = "Save"; ObjectID = "z4I-O8-hYF"; */
 "z4I-O8-hYF.title" = "Salvar";
