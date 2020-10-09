@@ -14,6 +14,7 @@
 		5F27BDA524E60D99004C0D98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F27BDA424E60D99004C0D98 /* Assets.xcassets */; };
 		5F27BDA824E60D99004C0D98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F27BDA624E60D99004C0D98 /* LaunchScreen.storyboard */; };
 		5F4EA10F252B5BC10055961B /* beer-app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F4EA10D252B5BC10055961B /* beer-app.xcdatamodeld */; };
+		5F5169EA252F58C8004156E5 /* UIColor+BeerBolor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5169E9252F58C8004156E5 /* UIColor+BeerBolor.swift */; };
 		5F5200F0252CAA830092DD5F /* BeerColorSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5200EF252CAA830092DD5F /* BeerColorSlider.swift */; };
 		5F5391092501C41F00415F4B /* BeerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5391082501C41F00415F4B /* BeerRepository.swift */; };
 		5F8780BF251FCB2D001452AC /* BeerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8780BE251FCB2D001452AC /* BeerTableViewCell.swift */; };
@@ -33,6 +34,7 @@
 		5F27BDA724E60D99004C0D98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F27BDA924E60D99004C0D98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F4EA10E252B5BC10055961B /* beer-app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "beer-app.xcdatamodel"; sourceTree = "<group>"; };
+		5F5169E9252F58C8004156E5 /* UIColor+BeerBolor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+BeerBolor.swift"; sourceTree = "<group>"; };
 		5F5200EF252CAA830092DD5F /* BeerColorSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerColorSlider.swift; sourceTree = "<group>"; };
 		5F5391082501C41F00415F4B /* BeerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerRepository.swift; sourceTree = "<group>"; };
 		5F8780BE251FCB2D001452AC /* BeerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerTableViewCell.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				5F27BD9D24E60D98004C0D98 /* SceneDelegate.swift */,
 				5F27BDA924E60D99004C0D98 /* Info.plist */,
 				5F87CBC9252EA8F300275142 /* Localizable.strings */,
+				5F5169E9252F58C8004156E5 /* UIColor+BeerBolor.swift */,
 			);
 			path = "beer-app";
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				5F27BD9C24E60D98004C0D98 /* AppDelegate.swift in Sources */,
 				5F27BD9E24E60D98004C0D98 /* SceneDelegate.swift in Sources */,
 				5F4EA10F252B5BC10055961B /* beer-app.xcdatamodeld in Sources */,
+				5F5169EA252F58C8004156E5 /* UIColor+BeerBolor.swift in Sources */,
 				5F5200F0252CAA830092DD5F /* BeerColorSlider.swift in Sources */,
 				5FF231462522A13D00E9F2D0 /* BeerRatingView.swift in Sources */,
 				5F5391092501C41F00415F4B /* BeerRepository.swift in Sources */,
