@@ -74,22 +74,22 @@ class BeerRepository {
     }
     
     private func saveSamples() {
-        let deserterBeer = Beer(context: context)
-        deserterBeer.name = "Desertora"
-        deserterBeer.brewery = "Nefasta"
-        deserterBeer.price = 15.9
-        deserterBeer.rating = 5
-        deserterBeer.image = UIImage(named: "deserter")!.pngData()!
-        deserterBeer.color = UIColor.white
-        save(deserterBeer)
-
         let refugeeBeer = Beer(context: context)
         refugeeBeer.name = "Refugiada"
         refugeeBeer.brewery = "Nefasta"
         refugeeBeer.price = 13.9
         refugeeBeer.rating = 4
         refugeeBeer.image = UIImage(named: "refugee")!.pngData()!
-        refugeeBeer.color = UIColor.white
+        refugeeBeer.color = UIColor.americanWheat
         save(refugeeBeer)
+        
+        let deserterBeer = Beer(context: context)
+        deserterBeer.name = "Desertora"
+        deserterBeer.brewery = "Nefasta"
+        deserterBeer.price = 15.9
+        deserterBeer.rating = 5
+        deserterBeer.image = UIImage(named: "deserter")!.pngData()!
+        deserterBeer.color = UIColor.americanPaleAle
+        save(deserterBeer)
     }
 }
